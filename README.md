@@ -5,7 +5,7 @@ many-to-many table in a relational database and ask it graph questions, compared
 graph database, from 1 million to 100 million rows.
 
 It is the code behind the article
-[Relationships in a Relational Database: MySQL vs NebulaGraph from 1 Million to 100 Million Rows](https://dotnet-talk.com/blog/)
+[Relationships in a Relational Database: MySQL vs NebulaGraph from 1 Million to 100 Million Rows](https://dotnet-talk.com/blog/graph-vs-relational-mysql-nebulagraph-benchmark)
 on dotnet-talk.com.
 
 ## What it measures
