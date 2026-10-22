@@ -51,6 +51,7 @@ foreach (var m in options.Methods)
     });
 
 var timings = new List<Timing>();
+int errors = 0;
 var answers = new Dictionary<string, Dictionary<string, long?>>();
 
 // Question 1: how many nodes are within N hops of this one?
@@ -94,6 +95,11 @@ foreach (var (key, byMethod) in answers)
 Console.WriteLine(mismatches == 0 ? "answers: all methods agree" : $"answers: {mismatches} mismatches");
 
 var summary = Summary.Render(options, nodeCount, timings, methods.Select(m => m.Name).ToList(), mismatches);
+if (errors > 0)
+{
+    summary = $"WARNING: {errors} queries failed with an engine error (see the CSV). Check the logs; these results are not valid.\n\n" + summary;
+    Console.WriteLine($"errors: {errors}");
+}
 await File.WriteAllTextAsync(Path.Combine("results", $"{options.Tier}-summary.md"), summary);
 Console.WriteLine(summary);
 return;
@@ -116,6 +122,15 @@ async Task<bool> MeasureAsync(IMethod method, string query, int hops, string cas
             await csv.WriteLineAsync($"{options.Tier},{method.Name},{query},{hops},{caseId},{a},{b},{r},timeout,");
             await csv.FlushAsync();
             Console.WriteLine($"{method.Name,-22} {query,-14} {hops} hops {caseId,-8} run {r}: TIMEOUT after {options.Timeout.TotalSeconds:N0} s");
+            return true;
+        }
+        catch (Exception e) when (e is not QueryTimeout)
+        {
+            // An engine error is not a result. Record it, keep going, and mark the whole run invalid.
+            errors++;
+            await csv.WriteLineAsync($"{options.Tier},{method.Name},{query},{hops},{caseId},{a},{b},{r},error,");
+            await csv.FlushAsync();
+            Console.WriteLine($"{method.Name,-22} {query,-14} {hops} hops {caseId,-8} run {r}: ERROR {e.Message.Split('\n')[0]}");
             return true;
         }
         watch.Stop();
