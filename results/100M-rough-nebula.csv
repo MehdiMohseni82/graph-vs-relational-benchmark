@@ -1,0 +1,25 @@
+tier,method,query,hops,case,a,b,run,ms,answer
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,1,s0,5626108,-1,0,5018.3,28
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,1,s0,5626108,-1,1,4.3,28
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,2,s0,5626108,-1,0,7.7,4379
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,2,s0,5626108,-1,1,5012.3,4379
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,3,s0,5626108,-1,0,101.4,127733
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,3,s0,5626108,-1,1,5044.5,127733
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,1,s1,8020274,-1,0,2.0,26
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,1,s1,8020274,-1,1,1.4,26
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,2,s1,8020274,-1,0,5011.4,1719
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,2,s1,8020274,-1,1,4.5,1719
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,3,s1,8020274,-1,0,5113.1,285452
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,3,s1,8020274,-1,1,65.7,285452
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,1,s2,1879716,-1,0,1.4,17
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,1,s2,1879716,-1,1,1.1,17
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,2,s2,1879716,-1,0,1.7,390
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,2,s2,1879716,-1,1,1.2,390
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,3,s2,1879716,-1,0,21.5,78526
+100M-rough-nebula,NebulaGraph nGQL,neighbourhood,3,s2,1879716,-1,1,17.4,78526
+100M-rough-nebula,NebulaGraph nGQL,shortest path,6,walk0,1112817,1899827,0,1.3,2
+100M-rough-nebula,NebulaGraph nGQL,shortest path,6,walk0,1112817,1899827,1,0.8,2
+100M-rough-nebula,NebulaGraph nGQL,shortest path,6,random1,1100577,2457869,0,10.8,6
+100M-rough-nebula,NebulaGraph nGQL,shortest path,6,random1,1100577,2457869,1,8.2,6
+100M-rough-nebula,NebulaGraph nGQL,shortest path,6,walk2,294411,2966602,0,2.1,3
+100M-rough-nebula,NebulaGraph nGQL,shortest path,6,walk2,294411,2966602,1,1.7,3

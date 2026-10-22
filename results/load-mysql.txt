@@ -1,0 +1,19 @@
+2026-10-21 13:22:53 schema
+2026-10-21 13:22:53 nodes
+2026-10-21 13:22:54 edges part-0000.csv
+2026-10-21 13:23:00 reverse index (dst, src)
+2026-10-21 13:23:05 done: 10007425 rows
+2026-10-21 18:08:17 schema
+2026-10-21 18:08:17 nodes
+2026-10-21 18:08:24 edges part-0000.csv
+2026-10-21 18:08:31 edges part-0001.csv
+2026-10-21 18:08:38 edges part-0002.csv
+2026-10-21 18:08:44 edges part-0003.csv
+2026-10-21 18:08:51 edges part-0004.csv
+2026-10-21 18:08:58 edges part-0005.csv
+2026-10-21 18:09:05 edges part-0006.csv
+2026-10-21 18:09:12 edges part-0007.csv
+2026-10-21 18:09:19 edges part-0008.csv
+2026-10-21 18:09:26 edges part-0009.csv
+2026-10-21 18:09:26 reverse index (dst, src)
+2026-10-21 18:10:08 done: 100007469 rows

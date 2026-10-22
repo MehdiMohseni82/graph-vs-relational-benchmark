@@ -1,0 +1,80 @@
+# MySQL 8.4 and a single-host NebulaGraph 3.8 cluster (metad, storaged, graphd).
+# Both read the generated CSV files from ./data. Memory for each engine is set in .env
+# (see .env.example): MySQL gets the same total as storaged + graphd together.
+
+services:
+  mysql:
+    image: mysql:8.4
+    mem_limit: ${MYSQL_MEM_LIMIT:-6g}
+    environment:
+      MYSQL_ROOT_PASSWORD: bench
+      MYSQL_DATABASE: graph
+    command:
+      - --innodb-buffer-pool-size=${MYSQL_BUFFER_POOL:-4G}
+      - --innodb-log-file-size=4G
+      - --innodb-flush-log-at-trx-commit=2
+      - --secure-file-priv=/bench-data
+      - --max-execution-time=0
+      - --cte-max-recursion-depth=100000
+      - --skip-log-bin
+    ports: ["3306:3306"]
+    volumes:
+      - ./data:/bench-data
+      - mysql-data:/var/lib/mysql
+
+  metad:
+    image: vesoft/nebula-metad:v3.8.0
+    restart: on-failure
+    command:
+      - --meta_server_addrs=metad:9559
+      - --local_ip=metad
+      - --ws_ip=metad
+      - --port=9559
+      - --data_path=/data/meta
+      - --logtostderr=true
+    volumes:
+      - nebula-meta:/data/meta
+
+  storaged:
+    image: vesoft/nebula-storaged:v3.8.0
+    restart: on-failure
+    mem_limit: ${NEBULA_STORAGE_MEM_LIMIT:-5g}
+    command:
+      - --meta_server_addrs=metad:9559
+      - --local_ip=storaged
+      - --ws_ip=storaged
+      - --port=9779
+      - --data_path=/data/storage
+      - --rocksdb_block_cache=${NEBULA_BLOCK_CACHE_MB:-4096}
+      - --logtostderr=true
+    depends_on: [metad]
+    volumes:
+      - nebula-storage:/data/storage
+
+  graphd:
+    image: vesoft/nebula-graphd:v3.8.0
+    restart: on-failure
+    mem_limit: ${NEBULA_GRAPH_MEM_LIMIT:-1g}
+    command:
+      - --meta_server_addrs=metad:9559
+      - --local_ip=graphd
+      - --ws_ip=graphd
+      - --port=9669
+      - --session_idle_timeout_secs=604800
+      - --enable_client_white_list=false
+      - --logtostderr=true
+    depends_on: [metad, storaged]
+    ports: ["9669:9669"]
+
+  importer:
+    image: vesoft/nebula-importer:v4.1.0
+    profiles: [import]
+    depends_on: [graphd]
+    volumes:
+      - ./data:/data:ro
+      - ./nebula:/config:ro
+
+volumes:
+  mysql-data:
+  nebula-meta:
+  nebula-storage:

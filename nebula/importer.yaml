@@ -1,0 +1,65 @@
+# nebula-importer v4: creates the space, then loads the same CSV files MySQL loads.
+client:
+  version: v3
+  address: "graphd:9669"
+  user: root
+  password: nebula
+  concurrencyPerAddress: 16
+  reconnectInitialInterval: 1s
+  retry: 3
+  retryInitialInterval: 1s
+
+manager:
+  spaceName: graph
+  batch: 1024
+  readerConcurrency: 16
+  importerConcurrency: 64
+  statsInterval: 30s
+  hooks:
+    before:
+      - statements:
+        - ADD HOSTS "storaged":9779;
+        wait: 15s
+      - statements:
+        - |
+          DROP SPACE IF EXISTS graph;
+          CREATE SPACE IF NOT EXISTS graph(partition_num=36, replica_factor=1, vid_type=INT64);
+        wait: 20s
+      - statements:
+        - |
+          USE graph;
+          CREATE TAG IF NOT EXISTS node(name string);
+          CREATE EDGE IF NOT EXISTS related();
+        wait: 20s
+
+log:
+  level: INFO
+  console: true
+
+sources:
+  - path: /data/nodes.csv
+    csv:
+      delimiter: ","
+    tags:
+    - name: node
+      id:
+        type: "INT"
+        index: 0
+      props:
+        - name: "name"
+          type: "STRING"
+          index: 1
+
+  - path: /data/edges/*.csv
+    csv:
+      delimiter: ","
+    edges:
+    - name: related
+      src:
+        id:
+          type: "INT"
+          index: 0
+      dst:
+        id:
+          type: "INT"
+          index: 1
