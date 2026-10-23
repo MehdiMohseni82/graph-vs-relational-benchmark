@@ -10,11 +10,13 @@ log "schema"
 mysql < mysql/schema.sql
 log "nodes"
 mysql -e "LOAD DATA INFILE '/bench-data/nodes.csv' INTO TABLE nodes FIELDS TERMINATED BY ',' (id, name);"
+log "hubs"
+mysql -e "LOAD DATA INFILE '/bench-data/hubs.csv' INTO TABLE hubs FIELDS TERMINATED BY ',' (id);"
 for f in data/edges/part-*.csv; do
   log "edges $(basename "$f")"
   mysql -e "SET unique_checks=0; LOAD DATA INFILE '/bench-data/edges/$(basename "$f")' INTO TABLE edges FIELDS TERMINATED BY ',' (src, dst);"
 done
 log "reverse index (dst, src)"
 mysql -e "ALTER TABLE edges ADD INDEX ix_edges_dst_src (dst, src);"
-mysql -e "ANALYZE TABLE nodes, edges;" > /dev/null
+mysql -e "ANALYZE TABLE nodes, edges, hubs;" > /dev/null
 log "done: $(mysql -N -e 'SELECT (SELECT COUNT(*) FROM nodes) + (SELECT COUNT(*) FROM edges);') rows"

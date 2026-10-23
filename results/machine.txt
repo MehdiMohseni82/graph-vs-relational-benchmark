@@ -1,0 +1,13 @@
+      Model Name: Mac Studio
+      Chip: Apple M3 Ultra
+      Total Number of Cores: 28 (20 Performance and 8 Efficiency)
+      Memory: 96 GB
+Docker: 29.9.2, CPUs 24, memory 84178505728
+10.0.402
+01047dd fix: record engine errors instead of aborting, raise graphd storage timeout above the benchmark timeout
+MYSQL_MEM_LIMIT=30g
+MYSQL_BUFFER_POOL=24G
+NEBULA_STORAGE_MEM_LIMIT=24g
+NEBULA_BLOCK_CACHE_MB=16384
+NEBULA_GRAPH_MEM_LIMIT=6g
+/dev/disk3s5   926Gi    39Gi   866Gi     5%    245k  9.1G    0%   /System/Volumes/Data

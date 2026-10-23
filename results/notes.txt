@@ -1,0 +1,5 @@
+Environment notes (set before the first size ran):
+- Mac Studio M3 Ultra, 96 GB RAM, so the runbook's "96 GB" .env block is used (MySQL 30g / NebulaGraph 24g+6g).
+- Docker Desktop 4.96.2: memory 80 GB (MemoryMiB 81920; VM reports 78 GiB total), swap 4 GB.
+- CPUs: settings file has Cpus=28 (all cores), but the Docker VM reports 24 CPUs. Both engines share the same 24 CPUs, so the comparison stays equal.
+- .NET SDK 10.0.402 installed with dotnet-install.sh in ~/.dotnet (not on the default PATH; the run adds it to PATH).

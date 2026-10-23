@@ -1,0 +1,9 @@
+nodes=1000000
+edges=62537356
+rows=63537356
+degree=50
+seed=42
+planted_hubs=20
+hub_degree=1000000
+hub_threshold=1000
+hubs=904

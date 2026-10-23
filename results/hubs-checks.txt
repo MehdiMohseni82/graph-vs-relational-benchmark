@@ -1,0 +1,11 @@
+mysql: false 0 running
+metad: false 0 running
+storaged: false 0 running
+graphd: false 0 running
+kernel OOM kills: 0
+engine errors: 0
+graph-vs-relational-benchmark-graphd-1 1.535GiB / 6GiB
+graph-vs-relational-benchmark-storaged-1 8.02GiB / 24GiB
+graph-vs-relational-benchmark-mysql-1 13.46GiB / 30GiB
+graph-vs-relational-benchmark-metad-1 619.8MiB / 78.4GiB
+== hubs VALID

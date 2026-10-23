@@ -9,6 +9,7 @@ interface IMethod : IAsyncDisposable
     string Name { get; }
     Task<long?> NeighbourhoodAsync(long start, int hops, TimeSpan timeout);
     Task<long?> ShortestPathAsync(long a, long b, int maxHops, TimeSpan timeout);
+    Task<long?> NeighbourhoodAvoidingHubsAsync(long start, int hops, TimeSpan timeout);
 }
 
 sealed class QueryTimeout : Exception;
@@ -36,6 +37,9 @@ sealed class MySqlCte(MySqlConnection connection) : IMethod
 
     public Task<long?> ShortestPathAsync(long a, long b, int maxHops, TimeSpan timeout) =>
         ScalarAsync(Queries.MySqlShortestPath, timeout, ("@a", a), ("@b", b), ("@maxHops", maxHops));
+
+    public Task<long?> NeighbourhoodAvoidingHubsAsync(long start, int hops, TimeSpan timeout) =>
+        ScalarAsync(Queries.MySqlNeighbourhoodAvoidingHubs, timeout, ("@start", start), ("@hops", hops));
 
     async Task<long?> ScalarAsync(string sql, TimeSpan timeout, params (string Name, long Value)[] parameters)
     {
@@ -67,7 +71,14 @@ sealed class MySqlBfs(MySqlConnection connection) : IMethod
 
     public string Name => "MySQL + BFS in C#";
 
-    public async Task<long?> NeighbourhoodAsync(long start, int hops, TimeSpan timeout)
+    public Task<long?> NeighbourhoodAsync(long start, int hops, TimeSpan timeout) =>
+        ReachAsync(start, hops, timeout, Queries.MySqlNeighboursOf);
+
+    // Question 3 never counts the start node.
+    public async Task<long?> NeighbourhoodAvoidingHubsAsync(long start, int hops, TimeSpan timeout) =>
+        await ReachAsync(start, hops, timeout, Queries.MySqlNeighboursOfAvoidingHubs, countStart: false);
+
+    async Task<long?> ReachAsync(long start, int hops, TimeSpan timeout, string step, bool countStart = true)
     {
         var deadline = DateTime.UtcNow + timeout;
         var visited = new HashSet<long> { start };
@@ -77,7 +88,7 @@ sealed class MySqlBfs(MySqlConnection connection) : IMethod
         for (int depth = 1; depth <= hops && frontier.Count > 0; depth++)
         {
             var next = new List<long>();
-            foreach (var neighbour in await NeighboursAsync(frontier, deadline))
+            foreach (var neighbour in await NeighboursAsync(frontier, deadline, step))
             {
                 if (depth == 1) startHasNeighbours = true;
                 if (visited.Add(neighbour)) next.Add(neighbour);
@@ -86,7 +97,7 @@ sealed class MySqlBfs(MySqlConnection connection) : IMethod
         }
         // Same answer as the CTE: every node reachable in 1..hops steps. The start node is one of
         // them from two steps on, because you can go to a neighbour and come straight back.
-        bool startCounts = hops >= 2 && startHasNeighbours;
+        bool startCounts = countStart && hops >= 2 && startHasNeighbours;
         return visited.Count - (startCounts ? 0 : 1);
     }
 
@@ -109,7 +120,7 @@ sealed class MySqlBfs(MySqlConnection connection) : IMethod
             if (frontier.Count == 0) return null;
 
             var next = new List<long>();
-            foreach (var neighbour in await NeighboursAsync(frontier, deadline))
+            foreach (var neighbour in await NeighboursAsync(frontier, deadline, Queries.MySqlNeighboursOf))
             {
                 if (other.Contains(neighbour)) return length;
                 if (seen.Add(neighbour)) next.Add(neighbour);
@@ -119,14 +130,14 @@ sealed class MySqlBfs(MySqlConnection connection) : IMethod
         return null;
     }
 
-    async Task<List<long>> NeighboursAsync(List<long> nodes, DateTime deadline)
+    async Task<List<long>> NeighboursAsync(List<long> nodes, DateTime deadline, string step)
     {
         var result = new List<long>();
         for (int i = 0; i < nodes.Count; i += BatchSize)
         {
             if (DateTime.UtcNow > deadline) throw new QueryTimeout();
             var ids = string.Join(',', nodes.Skip(i).Take(BatchSize));
-            await using var command = new MySqlCommand(string.Format(Queries.MySqlNeighboursOf, ids), connection);
+            await using var command = new MySqlCommand(string.Format(step, ids), connection);
             await using var reader = await command.ExecuteReaderAsync();
             while (await reader.ReadAsync())
                 result.Add(reader.GetInt64(0));
@@ -142,12 +153,18 @@ sealed class NebulaGql : IMethod
     NebulaConnection connection = null!;
     long session;
     bool requireSpace = true;
+    bool levelByLevel;
+    public bool LevelByLevel => levelByLevel;
+    HashSet<long>? clientHubs; // set: hubs are filtered in C#, not by a WHERE on tags($$)
 
-    public string Name => "NebulaGraph nGQL";
+    // levelByLevel: question 3 is walked from C#, one GO step per level, as an application does
+    // when it wants the filter applied during the search. Questions 1 and 2 are unchanged.
+    public string Name => !levelByLevel ? "NebulaGraph nGQL"
+        : clientHubs is null ? "NebulaGraph steps (WHERE tags)" : "NebulaGraph steps (hub set in C#)";
 
-    public static async Task<NebulaGql> OpenAsync(bool requireSpace = true)
+    public static async Task<NebulaGql> OpenAsync(bool requireSpace = true, bool levelByLevel = false, HashSet<long>? clientHubs = null)
     {
-        var nebula = new NebulaGql { requireSpace = requireSpace };
+        var nebula = new NebulaGql { requireSpace = requireSpace, levelByLevel = levelByLevel, clientHubs = clientHubs };
         await nebula.ConnectAsync();
         return nebula;
     }
@@ -167,6 +184,51 @@ sealed class NebulaGql : IMethod
 
     public Task<long?> ShortestPathAsync(long a, long b, int maxHops, TimeSpan timeout) =>
         ScalarAsync(Queries.NebulaShortestPath(a, b, maxHops), timeout);
+
+    public Task<long?> NeighbourhoodAvoidingHubsAsync(long start, int hops, TimeSpan timeout) =>
+        levelByLevel
+            ? StepsAsync(start, hops, timeout)
+            : throw new NotSupportedException("run question 3 with nebula-steps");
+
+    async Task<long?> StepsAsync(long start, int hops, TimeSpan timeout)
+    {
+        const int BatchSize = 2_000;
+        var deadline = DateTime.UtcNow + timeout;
+        var visited = new HashSet<long> { start };
+        var frontier = new List<long> { start };
+        for (int depth = 1; depth <= hops && frontier.Count > 0; depth++)
+        {
+            var next = new List<long>();
+            for (int i = 0; i < frontier.Count; i += BatchSize)
+            {
+                var left = deadline - DateTime.UtcNow;
+                if (left <= TimeSpan.Zero) throw new QueryTimeout();
+                var batch = frontier.Skip(i).Take(BatchSize);
+                var statement = clientHubs is null
+                    ? Queries.NebulaNeighboursOfAvoidingHubs(batch)
+                    : Queries.NebulaNeighboursOf(batch);
+                foreach (var neighbour in await ColumnAsync(statement, left))
+                    if ((clientHubs is null || !clientHubs.Contains(neighbour)) && visited.Add(neighbour)) next.Add(neighbour);
+            }
+            frontier = next;
+        }
+        return visited.Count - 1; // question 3 never counts the start node
+    }
+
+    async Task<List<long>> ColumnAsync(string statement, TimeSpan timeout)
+    {
+        var call = connection.ExecuteAsync(session, statement);
+        if (await Task.WhenAny(call, Task.Delay(timeout)) != call)
+        {
+            connection.Dispose();
+            await ConnectAsync();
+            throw new QueryTimeout();
+        }
+        var response = await call;
+        if (response.Error_code != 0)
+            throw new InvalidOperationException(Encoding.UTF8.GetString(response.Error_msg ?? []));
+        return response.Data?.Rows?.Select(r => r.Values[0].IVal).ToList() ?? [];
+    }
 
     public async Task<string> ExecuteAsync(string statement)
     {

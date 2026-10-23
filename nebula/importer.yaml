@@ -29,6 +29,7 @@ manager:
         - |
           USE graph;
           CREATE TAG IF NOT EXISTS node(name string);
+          CREATE TAG IF NOT EXISTS hub();
           CREATE EDGE IF NOT EXISTS related();
         wait: 20s
 
@@ -49,6 +50,15 @@ sources:
         - name: "name"
           type: "STRING"
           index: 1
+
+  - path: /data/hubs.csv
+    csv:
+      delimiter: ","
+    tags:
+    - name: hub
+      id:
+        type: "INT"
+        index: 0
 
   - path: /data/edges/*.csv
     csv:

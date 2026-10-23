@@ -4,6 +4,8 @@
 #   scripts/run-tier.sh 500M 50000000 --timeout 900
 # rows = nodes + edges, and the generator gives each node 9 edges on average,
 # so 50,000,000 nodes is about 500,000,000 rows.
+# GEN_ARGS replaces the generator's shape, for example the hub-heavy graph:
+#   GEN_ARGS="--degree 50 --hubs 20 --hub-degree 500000" scripts/run-tier.sh hubs 1000000 --avoid-hubs 1,2,3,4
 set -euo pipefail
 cd "$(dirname "$0")/.."
 tier=$1; nodes=$2; shift 2
@@ -11,7 +13,7 @@ log() { echo "$(date '+%F %T') [$tier] $*" | tee -a "results/$tier-run.log"; }
 mkdir -p results; : > "results/$tier-run.log"; : > results/load-mysql.txt; : > results/load-nebula.txt
 
 log "generate $nodes nodes"
-dotnet run -c Release --project src/Generator -- --nodes "$nodes" --degree 9 --out data | tail -1 | tee -a "results/$tier-run.log"
+dotnet run -c Release --project src/Generator -- --nodes "$nodes" ${GEN_ARGS:---degree 9} --out data | tail -1 | tee -a "results/$tier-run.log"
 
 log "reset databases"
 docker compose down -v --remove-orphans >/dev/null 2>&1

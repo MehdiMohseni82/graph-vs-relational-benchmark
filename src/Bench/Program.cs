@@ -40,6 +40,17 @@ for (int i = 0; i < options.Seeds; i++)
         pairs.Add((a, rng.NextInt64(nodeCount), "random"));
 }
 
+// Question 3 starts only from nodes that are not hubs themselves.
+var hubIds = new HashSet<long>();
+if (options.AvoidHops.Length > 0)
+{
+    await using var command = new MySqlCommand("SELECT id FROM hubs", setup);
+    await using var reader = await command.ExecuteReaderAsync();
+    while (await reader.ReadAsync()) hubIds.Add(reader.GetInt64(0));
+    Console.WriteLine($"hubs: {hubIds.Count:N0}");
+}
+var avoidStarts = starts.Select(s => { while (hubIds.Contains(s)) s = rng.NextInt64(nodeCount); return s; }).ToList();
+
 var methods = new List<IMethod>();
 foreach (var m in options.Methods)
     methods.Add(m switch
@@ -47,6 +58,8 @@ foreach (var m in options.Methods)
         "cte" => new MySqlCte(await MySql.OpenAsync()),
         "bfs" => new MySqlBfs(await MySql.OpenAsync()),
         "nebula" => await NebulaGql.OpenAsync(),
+        "nebula-steps" => await NebulaGql.OpenAsync(levelByLevel: true),
+        "nebula-steps-client" => await NebulaGql.OpenAsync(levelByLevel: true, clientHubs: hubIds),
         _ => throw new ArgumentException($"unknown method {m}")
     });
 
@@ -54,8 +67,13 @@ var timings = new List<Timing>();
 int errors = 0;
 var answers = new Dictionary<string, Dictionary<string, long?>>();
 
+// "nebula-steps" only differs from "nebula" on question 3, and "nebula" cannot answer question 3
+// in one statement (see Queries.cs), so each runs only where it means something.
+bool Steps(IMethod m) => m is NebulaGql { LevelByLevel: true };
+bool OneStatementNebula(IMethod m) => m is NebulaGql { LevelByLevel: false };
+
 // Question 1: how many nodes are within N hops of this one?
-foreach (var method in methods)
+foreach (var method in methods.Where(m => !Steps(m)))
     for (int s = 0; s < starts.Count; s++)
     {
         long start = starts[s];
@@ -69,13 +87,27 @@ foreach (var method in methods)
     }
 
 // Question 2: are A and B related, and how many hops apart?
-foreach (var method in methods)
+foreach (var method in methods.Where(m => !Steps(m)))
     for (int p = 0; p < pairs.Count; p++)
     {
         var (a, b, kind) = pairs[p];
         var key = $"path {a} to {b}";
         await MeasureAsync(method, "shortest path", options.MaxPathHops, $"{kind}{p}", a, b, key,
             () => method.ShortestPathAsync(a, b, options.MaxPathHops, options.Timeout));
+    }
+
+// Question 3: the same neighbourhood, but a hub is never entered.
+foreach (var method in methods.Where(m => !OneStatementNebula(m)))
+    for (int s = 0; s < avoidStarts.Count && options.AvoidHops.Length > 0; s++)
+    {
+        long start = avoidStarts[s];
+        foreach (int hops in options.AvoidHops)
+        {
+            var key = $"avoiding hubs {hops} hops from {start}";
+            bool timedOut = await MeasureAsync(method, "avoiding hubs", hops, $"s{s}", start, -1, key,
+                () => method.NeighbourhoodAvoidingHubsAsync(start, hops, options.Timeout));
+            if (timedOut) break;
+        }
     }
 
 foreach (var method in methods) await method.DisposeAsync();
@@ -119,7 +151,7 @@ async Task<bool> MeasureAsync(IMethod method, string query, int hops, string cas
             watch.Stop();
             timings.Add(new Timing(method.Name, query, hops, caseId, r, null));
             timedOutKeys.Add((method.Name, key));
-            await csv.WriteLineAsync($"{options.Tier},{method.Name},{query},{hops},{caseId},{a},{b},{r},timeout,");
+            await csv.WriteLineAsync($"{options.Tier},\"{method.Name}\",{query},{hops},{caseId},{a},{b},{r},timeout,");
             await csv.FlushAsync();
             Console.WriteLine($"{method.Name,-22} {query,-14} {hops} hops {caseId,-8} run {r}: TIMEOUT after {options.Timeout.TotalSeconds:N0} s");
             return true;
@@ -128,7 +160,7 @@ async Task<bool> MeasureAsync(IMethod method, string query, int hops, string cas
         {
             // An engine error is not a result. Record it, keep going, and mark the whole run invalid.
             errors++;
-            await csv.WriteLineAsync($"{options.Tier},{method.Name},{query},{hops},{caseId},{a},{b},{r},error,");
+            await csv.WriteLineAsync($"{options.Tier},\"{method.Name}\",{query},{hops},{caseId},{a},{b},{r},error,");
             await csv.FlushAsync();
             Console.WriteLine($"{method.Name,-22} {query,-14} {hops} hops {caseId,-8} run {r}: ERROR {e.Message.Split('\n')[0]}");
             return true;
@@ -138,7 +170,7 @@ async Task<bool> MeasureAsync(IMethod method, string query, int hops, string cas
         timings.Add(new Timing(method.Name, query, hops, caseId, r, ms));
         answers.TryAdd(key, new());
         answers[key][method.Name] = answer;
-        await csv.WriteLineAsync($"{options.Tier},{method.Name},{query},{hops},{caseId},{a},{b},{r},{ms:F1},{answer}");
+        await csv.WriteLineAsync($"{options.Tier},\"{method.Name}\",{query},{hops},{caseId},{a},{b},{r},{ms:F1},{answer}");
         await csv.FlushAsync();
         Console.WriteLine($"{method.Name,-22} {query,-14} {hops} hops {caseId,-8} run {r}: {ms,10:N1} ms  answer {answer?.ToString() ?? "none"}");
         if (ms > options.SlowRunMs) break; // one measured run is enough when a run takes minutes
@@ -168,7 +200,7 @@ partial class Program
 
 record Timing(string Method, string Query, int Hops, string Case, int Run, double? Ms);
 
-record RunOptions(string Tier, int Seeds, int Runs, TimeSpan Timeout, int[] Hops, int MaxPathHops, string[] Methods, double SlowRunMs)
+record RunOptions(string Tier, int Seeds, int Runs, TimeSpan Timeout, int[] Hops, int MaxPathHops, string[] Methods, double SlowRunMs, int[] AvoidHops)
 {
     public static RunOptions Parse(string[] args)
     {
@@ -185,7 +217,8 @@ record RunOptions(string Tier, int Seeds, int Runs, TimeSpan Timeout, int[] Hops
             Get("--hops", "1,2,3,4").Split(',').Select(int.Parse).ToArray(),
             int.Parse(Get("--max-path", "6")),
             Get("--methods", "cte,bfs,nebula").Split(','),
-            double.Parse(Get("--slow-run-ms", "60000")));
+            double.Parse(Get("--slow-run-ms", "60000")),
+            Get("--avoid-hubs", "").Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray());
     }
 }
 
@@ -205,7 +238,12 @@ static class Summary
         };
         foreach (var group in timings.GroupBy(t => (t.Query, t.Hops)).OrderBy(g => g.Key.Query).ThenBy(g => g.Key.Hops))
         {
-            var label = group.Key.Query == "shortest path" ? $"shortest path (up to {group.Key.Hops} hops)" : $"neighbourhood, {group.Key.Hops} hops";
+            var label = group.Key.Query switch
+            {
+                "shortest path" => $"shortest path (up to {group.Key.Hops} hops)",
+                "avoiding hubs" => $"neighbourhood avoiding hubs, {group.Key.Hops} hops",
+                _ => $"neighbourhood, {group.Key.Hops} hops",
+            };
             var cells = methods.Select(m => Cell(group.Where(t => t.Method == m).ToList()));
             lines.Add($"| {label} | " + string.Join(" | ", cells) + " |");
         }

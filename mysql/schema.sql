@@ -1,6 +1,7 @@
 -- The way most of us first model a graph in a relational database:
 -- one table for the things, one many-to-many table for the relationships between them.
 
+DROP TABLE IF EXISTS hubs;
 DROP TABLE IF EXISTS edges;
 DROP TABLE IF EXISTS nodes;
 
@@ -15,4 +16,9 @@ CREATE TABLE edges (
   src BIGINT NOT NULL,
   dst BIGINT NOT NULL,
   PRIMARY KEY (src, dst)
+) ENGINE=InnoDB;
+
+-- Nodes with very many relationships (data/hubs.csv). A hub-avoiding traversal never enters them.
+CREATE TABLE hubs (
+  id BIGINT NOT NULL PRIMARY KEY
 ) ENGINE=InnoDB;

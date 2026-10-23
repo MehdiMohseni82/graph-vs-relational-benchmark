@@ -1,0 +1,568 @@
+tier,method,query,hops,case,a,b,run,ms,answer
+100M,MySQL recursive CTE,neighbourhood,1,s0,5626108,-1,0,16.3,28
+100M,MySQL recursive CTE,neighbourhood,1,s0,5626108,-1,1,1.4,28
+100M,MySQL recursive CTE,neighbourhood,1,s0,5626108,-1,2,1.0,28
+100M,MySQL recursive CTE,neighbourhood,1,s0,5626108,-1,3,1.2,28
+100M,MySQL recursive CTE,neighbourhood,2,s0,5626108,-1,0,4.2,4379
+100M,MySQL recursive CTE,neighbourhood,2,s0,5626108,-1,1,2.0,4379
+100M,MySQL recursive CTE,neighbourhood,2,s0,5626108,-1,2,1.9,4379
+100M,MySQL recursive CTE,neighbourhood,2,s0,5626108,-1,3,1.7,4379
+100M,MySQL recursive CTE,neighbourhood,3,s0,5626108,-1,0,291.8,127733
+100M,MySQL recursive CTE,neighbourhood,3,s0,5626108,-1,1,59.4,127733
+100M,MySQL recursive CTE,neighbourhood,3,s0,5626108,-1,2,56.9,127733
+100M,MySQL recursive CTE,neighbourhood,3,s0,5626108,-1,3,56.3,127733
+100M,MySQL recursive CTE,neighbourhood,4,s0,5626108,-1,0,14056.0,3710886
+100M,MySQL recursive CTE,neighbourhood,4,s0,5626108,-1,1,9479.8,3710886
+100M,MySQL recursive CTE,neighbourhood,4,s0,5626108,-1,2,9467.7,3710886
+100M,MySQL recursive CTE,neighbourhood,4,s0,5626108,-1,3,9366.6,3710886
+100M,MySQL recursive CTE,neighbourhood,1,s1,8020274,-1,0,2.4,26
+100M,MySQL recursive CTE,neighbourhood,1,s1,8020274,-1,1,0.9,26
+100M,MySQL recursive CTE,neighbourhood,1,s1,8020274,-1,2,0.8,26
+100M,MySQL recursive CTE,neighbourhood,1,s1,8020274,-1,3,0.6,26
+100M,MySQL recursive CTE,neighbourhood,2,s1,8020274,-1,0,2.0,1719
+100M,MySQL recursive CTE,neighbourhood,2,s1,8020274,-1,1,1.0,1719
+100M,MySQL recursive CTE,neighbourhood,2,s1,8020274,-1,2,1.2,1719
+100M,MySQL recursive CTE,neighbourhood,2,s1,8020274,-1,3,1.2,1719
+100M,MySQL recursive CTE,neighbourhood,3,s1,8020274,-1,0,337.9,285452
+100M,MySQL recursive CTE,neighbourhood,3,s1,8020274,-1,1,284.4,285452
+100M,MySQL recursive CTE,neighbourhood,3,s1,8020274,-1,2,283.4,285452
+100M,MySQL recursive CTE,neighbourhood,3,s1,8020274,-1,3,284.1,285452
+100M,MySQL recursive CTE,neighbourhood,4,s1,8020274,-1,0,19140.9,5244151
+100M,MySQL recursive CTE,neighbourhood,4,s1,8020274,-1,1,17466.5,5244151
+100M,MySQL recursive CTE,neighbourhood,4,s1,8020274,-1,2,17157.2,5244151
+100M,MySQL recursive CTE,neighbourhood,4,s1,8020274,-1,3,17109.3,5244151
+100M,MySQL recursive CTE,neighbourhood,1,s2,1879716,-1,0,1.2,17
+100M,MySQL recursive CTE,neighbourhood,1,s2,1879716,-1,1,0.8,17
+100M,MySQL recursive CTE,neighbourhood,1,s2,1879716,-1,2,0.7,17
+100M,MySQL recursive CTE,neighbourhood,1,s2,1879716,-1,3,0.6,17
+100M,MySQL recursive CTE,neighbourhood,2,s2,1879716,-1,0,0.8,390
+100M,MySQL recursive CTE,neighbourhood,2,s2,1879716,-1,1,0.7,390
+100M,MySQL recursive CTE,neighbourhood,2,s2,1879716,-1,2,0.7,390
+100M,MySQL recursive CTE,neighbourhood,2,s2,1879716,-1,3,0.8,390
+100M,MySQL recursive CTE,neighbourhood,3,s2,1879716,-1,0,29.7,78526
+100M,MySQL recursive CTE,neighbourhood,3,s2,1879716,-1,1,27.0,78526
+100M,MySQL recursive CTE,neighbourhood,3,s2,1879716,-1,2,27.2,78526
+100M,MySQL recursive CTE,neighbourhood,3,s2,1879716,-1,3,27.4,78526
+100M,MySQL recursive CTE,neighbourhood,4,s2,1879716,-1,0,4215.3,2162624
+100M,MySQL recursive CTE,neighbourhood,4,s2,1879716,-1,1,4134.1,2162624
+100M,MySQL recursive CTE,neighbourhood,4,s2,1879716,-1,2,4022.0,2162624
+100M,MySQL recursive CTE,neighbourhood,4,s2,1879716,-1,3,4107.1,2162624
+100M,MySQL recursive CTE,neighbourhood,1,s3,1112817,-1,0,1.2,24
+100M,MySQL recursive CTE,neighbourhood,1,s3,1112817,-1,1,0.7,24
+100M,MySQL recursive CTE,neighbourhood,1,s3,1112817,-1,2,0.7,24
+100M,MySQL recursive CTE,neighbourhood,1,s3,1112817,-1,3,0.6,24
+100M,MySQL recursive CTE,neighbourhood,2,s3,1112817,-1,0,1.2,1636
+100M,MySQL recursive CTE,neighbourhood,2,s3,1112817,-1,1,1.3,1636
+100M,MySQL recursive CTE,neighbourhood,2,s3,1112817,-1,2,1.2,1636
+100M,MySQL recursive CTE,neighbourhood,2,s3,1112817,-1,3,1.1,1636
+100M,MySQL recursive CTE,neighbourhood,3,s3,1112817,-1,0,29.0,57809
+100M,MySQL recursive CTE,neighbourhood,3,s3,1112817,-1,1,23.6,57809
+100M,MySQL recursive CTE,neighbourhood,3,s3,1112817,-1,2,23.3,57809
+100M,MySQL recursive CTE,neighbourhood,3,s3,1112817,-1,3,23.6,57809
+100M,MySQL recursive CTE,neighbourhood,4,s3,1112817,-1,0,4354.9,2282719
+100M,MySQL recursive CTE,neighbourhood,4,s3,1112817,-1,1,4339.0,2282719
+100M,MySQL recursive CTE,neighbourhood,4,s3,1112817,-1,2,4350.6,2282719
+100M,MySQL recursive CTE,neighbourhood,4,s3,1112817,-1,3,4267.6,2282719
+100M,MySQL recursive CTE,neighbourhood,1,s4,9091650,-1,0,1.1,8
+100M,MySQL recursive CTE,neighbourhood,1,s4,9091650,-1,1,0.8,8
+100M,MySQL recursive CTE,neighbourhood,1,s4,9091650,-1,2,0.7,8
+100M,MySQL recursive CTE,neighbourhood,1,s4,9091650,-1,3,0.6,8
+100M,MySQL recursive CTE,neighbourhood,2,s4,9091650,-1,0,0.7,267
+100M,MySQL recursive CTE,neighbourhood,2,s4,9091650,-1,1,0.6,267
+100M,MySQL recursive CTE,neighbourhood,2,s4,9091650,-1,2,0.6,267
+100M,MySQL recursive CTE,neighbourhood,2,s4,9091650,-1,3,0.6,267
+100M,MySQL recursive CTE,neighbourhood,3,s4,9091650,-1,0,5.2,8541
+100M,MySQL recursive CTE,neighbourhood,3,s4,9091650,-1,1,3.4,8541
+100M,MySQL recursive CTE,neighbourhood,3,s4,9091650,-1,2,3.4,8541
+100M,MySQL recursive CTE,neighbourhood,3,s4,9091650,-1,3,3.6,8541
+100M,MySQL recursive CTE,neighbourhood,4,s4,9091650,-1,0,925.0,745566
+100M,MySQL recursive CTE,neighbourhood,4,s4,9091650,-1,1,887.6,745566
+100M,MySQL recursive CTE,neighbourhood,4,s4,9091650,-1,2,878.2,745566
+100M,MySQL recursive CTE,neighbourhood,4,s4,9091650,-1,3,880.6,745566
+100M,MySQL recursive CTE,neighbourhood,1,s5,9510507,-1,0,1.1,31
+100M,MySQL recursive CTE,neighbourhood,1,s5,9510507,-1,1,0.8,31
+100M,MySQL recursive CTE,neighbourhood,1,s5,9510507,-1,2,0.6,31
+100M,MySQL recursive CTE,neighbourhood,1,s5,9510507,-1,3,0.5,31
+100M,MySQL recursive CTE,neighbourhood,2,s5,9510507,-1,0,2.4,6499
+100M,MySQL recursive CTE,neighbourhood,2,s5,9510507,-1,1,2.3,6499
+100M,MySQL recursive CTE,neighbourhood,2,s5,9510507,-1,2,2.3,6499
+100M,MySQL recursive CTE,neighbourhood,2,s5,9510507,-1,3,2.4,6499
+100M,MySQL recursive CTE,neighbourhood,3,s5,9510507,-1,0,453.1,399763
+100M,MySQL recursive CTE,neighbourhood,3,s5,9510507,-1,1,447.1,399763
+100M,MySQL recursive CTE,neighbourhood,3,s5,9510507,-1,2,448.4,399763
+100M,MySQL recursive CTE,neighbourhood,3,s5,9510507,-1,3,458.8,399763
+100M,MySQL recursive CTE,neighbourhood,4,s5,9510507,-1,0,26507.4,6418910
+100M,MySQL recursive CTE,neighbourhood,4,s5,9510507,-1,1,26351.4,6418910
+100M,MySQL recursive CTE,neighbourhood,4,s5,9510507,-1,2,26367.7,6418910
+100M,MySQL recursive CTE,neighbourhood,4,s5,9510507,-1,3,26036.3,6418910
+100M,MySQL recursive CTE,neighbourhood,1,s6,3746834,-1,0,1.2,18
+100M,MySQL recursive CTE,neighbourhood,1,s6,3746834,-1,1,0.8,18
+100M,MySQL recursive CTE,neighbourhood,1,s6,3746834,-1,2,0.7,18
+100M,MySQL recursive CTE,neighbourhood,1,s6,3746834,-1,3,0.7,18
+100M,MySQL recursive CTE,neighbourhood,2,s6,3746834,-1,0,0.9,413
+100M,MySQL recursive CTE,neighbourhood,2,s6,3746834,-1,1,0.7,413
+100M,MySQL recursive CTE,neighbourhood,2,s6,3746834,-1,2,0.7,413
+100M,MySQL recursive CTE,neighbourhood,2,s6,3746834,-1,3,0.6,413
+100M,MySQL recursive CTE,neighbourhood,3,s6,3746834,-1,0,283.7,227125
+100M,MySQL recursive CTE,neighbourhood,3,s6,3746834,-1,1,209.7,227125
+100M,MySQL recursive CTE,neighbourhood,3,s6,3746834,-1,2,208.4,227125
+100M,MySQL recursive CTE,neighbourhood,3,s6,3746834,-1,3,209.7,227125
+100M,MySQL recursive CTE,neighbourhood,4,s6,3746834,-1,0,12314.7,4333466
+100M,MySQL recursive CTE,neighbourhood,4,s6,3746834,-1,1,12310.6,4333466
+100M,MySQL recursive CTE,neighbourhood,4,s6,3746834,-1,2,12304.7,4333466
+100M,MySQL recursive CTE,neighbourhood,4,s6,3746834,-1,3,12289.3,4333466
+100M,MySQL recursive CTE,neighbourhood,1,s7,5668490,-1,0,1.1,21
+100M,MySQL recursive CTE,neighbourhood,1,s7,5668490,-1,1,0.8,21
+100M,MySQL recursive CTE,neighbourhood,1,s7,5668490,-1,2,0.7,21
+100M,MySQL recursive CTE,neighbourhood,1,s7,5668490,-1,3,0.5,21
+100M,MySQL recursive CTE,neighbourhood,2,s7,5668490,-1,0,12.6,38969
+100M,MySQL recursive CTE,neighbourhood,2,s7,5668490,-1,1,12.5,38969
+100M,MySQL recursive CTE,neighbourhood,2,s7,5668490,-1,2,12.4,38969
+100M,MySQL recursive CTE,neighbourhood,2,s7,5668490,-1,3,12.4,38969
+100M,MySQL recursive CTE,neighbourhood,3,s7,5668490,-1,0,1545.9,991205
+100M,MySQL recursive CTE,neighbourhood,3,s7,5668490,-1,1,1516.4,991205
+100M,MySQL recursive CTE,neighbourhood,3,s7,5668490,-1,2,1473.9,991205
+100M,MySQL recursive CTE,neighbourhood,3,s7,5668490,-1,3,1527.5,991205
+100M,MySQL recursive CTE,neighbourhood,4,s7,5668490,-1,0,65106.1,8671110
+100M,MySQL recursive CTE,neighbourhood,1,s8,7946720,-1,0,1.1,18
+100M,MySQL recursive CTE,neighbourhood,1,s8,7946720,-1,1,0.6,18
+100M,MySQL recursive CTE,neighbourhood,1,s8,7946720,-1,2,0.6,18
+100M,MySQL recursive CTE,neighbourhood,1,s8,7946720,-1,3,0.5,18
+100M,MySQL recursive CTE,neighbourhood,2,s8,7946720,-1,0,0.7,357
+100M,MySQL recursive CTE,neighbourhood,2,s8,7946720,-1,1,0.6,357
+100M,MySQL recursive CTE,neighbourhood,2,s8,7946720,-1,2,0.6,357
+100M,MySQL recursive CTE,neighbourhood,2,s8,7946720,-1,3,0.6,357
+100M,MySQL recursive CTE,neighbourhood,3,s8,7946720,-1,0,6.3,14561
+100M,MySQL recursive CTE,neighbourhood,3,s8,7946720,-1,1,5.5,14561
+100M,MySQL recursive CTE,neighbourhood,3,s8,7946720,-1,2,5.5,14561
+100M,MySQL recursive CTE,neighbourhood,3,s8,7946720,-1,3,5.5,14561
+100M,MySQL recursive CTE,neighbourhood,4,s8,7946720,-1,0,1185.6,924067
+100M,MySQL recursive CTE,neighbourhood,4,s8,7946720,-1,1,1177.3,924067
+100M,MySQL recursive CTE,neighbourhood,4,s8,7946720,-1,2,1232.7,924067
+100M,MySQL recursive CTE,neighbourhood,4,s8,7946720,-1,3,1183.2,924067
+100M,MySQL recursive CTE,neighbourhood,1,s9,2547537,-1,0,1.0,10
+100M,MySQL recursive CTE,neighbourhood,1,s9,2547537,-1,1,0.8,10
+100M,MySQL recursive CTE,neighbourhood,1,s9,2547537,-1,2,0.6,10
+100M,MySQL recursive CTE,neighbourhood,1,s9,2547537,-1,3,0.7,10
+100M,MySQL recursive CTE,neighbourhood,2,s9,2547537,-1,0,0.7,227
+100M,MySQL recursive CTE,neighbourhood,2,s9,2547537,-1,1,0.7,227
+100M,MySQL recursive CTE,neighbourhood,2,s9,2547537,-1,2,0.6,227
+100M,MySQL recursive CTE,neighbourhood,2,s9,2547537,-1,3,0.7,227
+100M,MySQL recursive CTE,neighbourhood,3,s9,2547537,-1,0,201.8,221695
+100M,MySQL recursive CTE,neighbourhood,3,s9,2547537,-1,1,203.8,221695
+100M,MySQL recursive CTE,neighbourhood,3,s9,2547537,-1,2,201.7,221695
+100M,MySQL recursive CTE,neighbourhood,3,s9,2547537,-1,3,201.4,221695
+100M,MySQL recursive CTE,neighbourhood,4,s9,2547537,-1,0,11687.2,4173800
+100M,MySQL recursive CTE,neighbourhood,4,s9,2547537,-1,1,11572.2,4173800
+100M,MySQL recursive CTE,neighbourhood,4,s9,2547537,-1,2,11758.7,4173800
+100M,MySQL recursive CTE,neighbourhood,4,s9,2547537,-1,3,11751.4,4173800
+100M,MySQL + BFS in C#,neighbourhood,1,s0,5626108,-1,0,8.5,28
+100M,MySQL + BFS in C#,neighbourhood,1,s0,5626108,-1,1,0.5,28
+100M,MySQL + BFS in C#,neighbourhood,1,s0,5626108,-1,2,0.3,28
+100M,MySQL + BFS in C#,neighbourhood,1,s0,5626108,-1,3,0.3,28
+100M,MySQL + BFS in C#,neighbourhood,2,s0,5626108,-1,0,3.6,4379
+100M,MySQL + BFS in C#,neighbourhood,2,s0,5626108,-1,1,3.3,4379
+100M,MySQL + BFS in C#,neighbourhood,2,s0,5626108,-1,2,9.7,4379
+100M,MySQL + BFS in C#,neighbourhood,2,s0,5626108,-1,3,2.1,4379
+100M,MySQL + BFS in C#,neighbourhood,3,s0,5626108,-1,0,51.6,127733
+100M,MySQL + BFS in C#,neighbourhood,3,s0,5626108,-1,1,46.9,127733
+100M,MySQL + BFS in C#,neighbourhood,3,s0,5626108,-1,2,43.8,127733
+100M,MySQL + BFS in C#,neighbourhood,3,s0,5626108,-1,3,43.8,127733
+100M,MySQL + BFS in C#,neighbourhood,4,s0,5626108,-1,0,1535.4,3710886
+100M,MySQL + BFS in C#,neighbourhood,4,s0,5626108,-1,1,1522.8,3710886
+100M,MySQL + BFS in C#,neighbourhood,4,s0,5626108,-1,2,1533.1,3710886
+100M,MySQL + BFS in C#,neighbourhood,4,s0,5626108,-1,3,1534.3,3710886
+100M,MySQL + BFS in C#,neighbourhood,1,s1,8020274,-1,0,0.7,26
+100M,MySQL + BFS in C#,neighbourhood,1,s1,8020274,-1,1,0.4,26
+100M,MySQL + BFS in C#,neighbourhood,1,s1,8020274,-1,2,0.3,26
+100M,MySQL + BFS in C#,neighbourhood,1,s1,8020274,-1,3,0.3,26
+100M,MySQL + BFS in C#,neighbourhood,2,s1,8020274,-1,0,1.4,1719
+100M,MySQL + BFS in C#,neighbourhood,2,s1,8020274,-1,1,1.2,1719
+100M,MySQL + BFS in C#,neighbourhood,2,s1,8020274,-1,2,1.1,1719
+100M,MySQL + BFS in C#,neighbourhood,2,s1,8020274,-1,3,1.1,1719
+100M,MySQL + BFS in C#,neighbourhood,3,s1,8020274,-1,0,61.2,285452
+100M,MySQL + BFS in C#,neighbourhood,3,s1,8020274,-1,1,54.3,285452
+100M,MySQL + BFS in C#,neighbourhood,3,s1,8020274,-1,2,53.7,285452
+100M,MySQL + BFS in C#,neighbourhood,3,s1,8020274,-1,3,53.1,285452
+100M,MySQL + BFS in C#,neighbourhood,4,s1,8020274,-1,0,2571.0,5244151
+100M,MySQL + BFS in C#,neighbourhood,4,s1,8020274,-1,1,2582.7,5244151
+100M,MySQL + BFS in C#,neighbourhood,4,s1,8020274,-1,2,2594.3,5244151
+100M,MySQL + BFS in C#,neighbourhood,4,s1,8020274,-1,3,2571.0,5244151
+100M,MySQL + BFS in C#,neighbourhood,1,s2,1879716,-1,0,1.7,17
+100M,MySQL + BFS in C#,neighbourhood,1,s2,1879716,-1,1,1.2,17
+100M,MySQL + BFS in C#,neighbourhood,1,s2,1879716,-1,2,0.9,17
+100M,MySQL + BFS in C#,neighbourhood,1,s2,1879716,-1,3,0.8,17
+100M,MySQL + BFS in C#,neighbourhood,2,s2,1879716,-1,0,2.1,390
+100M,MySQL + BFS in C#,neighbourhood,2,s2,1879716,-1,1,1.8,390
+100M,MySQL + BFS in C#,neighbourhood,2,s2,1879716,-1,2,1.7,390
+100M,MySQL + BFS in C#,neighbourhood,2,s2,1879716,-1,3,1.6,390
+100M,MySQL + BFS in C#,neighbourhood,3,s2,1879716,-1,0,18.0,78526
+100M,MySQL + BFS in C#,neighbourhood,3,s2,1879716,-1,1,15.3,78526
+100M,MySQL + BFS in C#,neighbourhood,3,s2,1879716,-1,2,15.0,78526
+100M,MySQL + BFS in C#,neighbourhood,3,s2,1879716,-1,3,14.7,78526
+100M,MySQL + BFS in C#,neighbourhood,4,s2,1879716,-1,0,803.9,2162624
+100M,MySQL + BFS in C#,neighbourhood,4,s2,1879716,-1,1,800.1,2162624
+100M,MySQL + BFS in C#,neighbourhood,4,s2,1879716,-1,2,796.3,2162624
+100M,MySQL + BFS in C#,neighbourhood,4,s2,1879716,-1,3,799.5,2162624
+100M,MySQL + BFS in C#,neighbourhood,1,s3,1112817,-1,0,0.7,24
+100M,MySQL + BFS in C#,neighbourhood,1,s3,1112817,-1,1,0.3,24
+100M,MySQL + BFS in C#,neighbourhood,1,s3,1112817,-1,2,0.3,24
+100M,MySQL + BFS in C#,neighbourhood,1,s3,1112817,-1,3,0.3,24
+100M,MySQL + BFS in C#,neighbourhood,2,s3,1112817,-1,0,1.3,1636
+100M,MySQL + BFS in C#,neighbourhood,2,s3,1112817,-1,1,1.1,1636
+100M,MySQL + BFS in C#,neighbourhood,2,s3,1112817,-1,2,1.1,1636
+100M,MySQL + BFS in C#,neighbourhood,2,s3,1112817,-1,3,1.1,1636
+100M,MySQL + BFS in C#,neighbourhood,3,s3,1112817,-1,0,20.4,57809
+100M,MySQL + BFS in C#,neighbourhood,3,s3,1112817,-1,1,18.5,57809
+100M,MySQL + BFS in C#,neighbourhood,3,s3,1112817,-1,2,17.5,57809
+100M,MySQL + BFS in C#,neighbourhood,3,s3,1112817,-1,3,17.2,57809
+100M,MySQL + BFS in C#,neighbourhood,4,s3,1112817,-1,0,753.8,2282719
+100M,MySQL + BFS in C#,neighbourhood,4,s3,1112817,-1,1,758.3,2282719
+100M,MySQL + BFS in C#,neighbourhood,4,s3,1112817,-1,2,753.9,2282719
+100M,MySQL + BFS in C#,neighbourhood,4,s3,1112817,-1,3,756.3,2282719
+100M,MySQL + BFS in C#,neighbourhood,1,s4,9091650,-1,0,0.7,8
+100M,MySQL + BFS in C#,neighbourhood,1,s4,9091650,-1,1,0.3,8
+100M,MySQL + BFS in C#,neighbourhood,1,s4,9091650,-1,2,0.3,8
+100M,MySQL + BFS in C#,neighbourhood,1,s4,9091650,-1,3,0.2,8
+100M,MySQL + BFS in C#,neighbourhood,2,s4,9091650,-1,0,0.6,267
+100M,MySQL + BFS in C#,neighbourhood,2,s4,9091650,-1,1,0.6,267
+100M,MySQL + BFS in C#,neighbourhood,2,s4,9091650,-1,2,0.6,267
+100M,MySQL + BFS in C#,neighbourhood,2,s4,9091650,-1,3,0.6,267
+100M,MySQL + BFS in C#,neighbourhood,3,s4,9091650,-1,0,4.2,8541
+100M,MySQL + BFS in C#,neighbourhood,3,s4,9091650,-1,1,3.3,8541
+100M,MySQL + BFS in C#,neighbourhood,3,s4,9091650,-1,2,3.4,8541
+100M,MySQL + BFS in C#,neighbourhood,3,s4,9091650,-1,3,3.7,8541
+100M,MySQL + BFS in C#,neighbourhood,4,s4,9091650,-1,0,171.0,745566
+100M,MySQL + BFS in C#,neighbourhood,4,s4,9091650,-1,1,167.7,745566
+100M,MySQL + BFS in C#,neighbourhood,4,s4,9091650,-1,2,170.0,745566
+100M,MySQL + BFS in C#,neighbourhood,4,s4,9091650,-1,3,173.0,745566
+100M,MySQL + BFS in C#,neighbourhood,1,s5,9510507,-1,0,0.5,31
+100M,MySQL + BFS in C#,neighbourhood,1,s5,9510507,-1,1,0.3,31
+100M,MySQL + BFS in C#,neighbourhood,1,s5,9510507,-1,2,0.3,31
+100M,MySQL + BFS in C#,neighbourhood,1,s5,9510507,-1,3,0.3,31
+100M,MySQL + BFS in C#,neighbourhood,2,s5,9510507,-1,0,2.1,6499
+100M,MySQL + BFS in C#,neighbourhood,2,s5,9510507,-1,1,1.9,6499
+100M,MySQL + BFS in C#,neighbourhood,2,s5,9510507,-1,2,2.0,6499
+100M,MySQL + BFS in C#,neighbourhood,2,s5,9510507,-1,3,1.9,6499
+100M,MySQL + BFS in C#,neighbourhood,3,s5,9510507,-1,0,98.3,399763
+100M,MySQL + BFS in C#,neighbourhood,3,s5,9510507,-1,1,96.4,399763
+100M,MySQL + BFS in C#,neighbourhood,3,s5,9510507,-1,2,99.7,399763
+100M,MySQL + BFS in C#,neighbourhood,3,s5,9510507,-1,3,97.6,399763
+100M,MySQL + BFS in C#,neighbourhood,4,s5,9510507,-1,0,3781.2,6418910
+100M,MySQL + BFS in C#,neighbourhood,4,s5,9510507,-1,1,3798.0,6418910
+100M,MySQL + BFS in C#,neighbourhood,4,s5,9510507,-1,2,3823.8,6418910
+100M,MySQL + BFS in C#,neighbourhood,4,s5,9510507,-1,3,3804.6,6418910
+100M,MySQL + BFS in C#,neighbourhood,1,s6,3746834,-1,0,1.6,18
+100M,MySQL + BFS in C#,neighbourhood,1,s6,3746834,-1,1,1.0,18
+100M,MySQL + BFS in C#,neighbourhood,1,s6,3746834,-1,2,0.7,18
+100M,MySQL + BFS in C#,neighbourhood,1,s6,3746834,-1,3,0.6,18
+100M,MySQL + BFS in C#,neighbourhood,2,s6,3746834,-1,0,1.9,413
+100M,MySQL + BFS in C#,neighbourhood,2,s6,3746834,-1,1,1.7,413
+100M,MySQL + BFS in C#,neighbourhood,2,s6,3746834,-1,2,1.5,413
+100M,MySQL + BFS in C#,neighbourhood,2,s6,3746834,-1,3,1.8,413
+100M,MySQL + BFS in C#,neighbourhood,3,s6,3746834,-1,0,38.8,227125
+100M,MySQL + BFS in C#,neighbourhood,3,s6,3746834,-1,1,37.9,227125
+100M,MySQL + BFS in C#,neighbourhood,3,s6,3746834,-1,2,37.1,227125
+100M,MySQL + BFS in C#,neighbourhood,3,s6,3746834,-1,3,37.0,227125
+100M,MySQL + BFS in C#,neighbourhood,4,s6,3746834,-1,0,1946.1,4333466
+100M,MySQL + BFS in C#,neighbourhood,4,s6,3746834,-1,1,1943.9,4333466
+100M,MySQL + BFS in C#,neighbourhood,4,s6,3746834,-1,2,1937.9,4333466
+100M,MySQL + BFS in C#,neighbourhood,4,s6,3746834,-1,3,1933.6,4333466
+100M,MySQL + BFS in C#,neighbourhood,1,s7,5668490,-1,0,1.3,21
+100M,MySQL + BFS in C#,neighbourhood,1,s7,5668490,-1,1,0.8,21
+100M,MySQL + BFS in C#,neighbourhood,1,s7,5668490,-1,2,0.8,21
+100M,MySQL + BFS in C#,neighbourhood,1,s7,5668490,-1,3,0.5,21
+100M,MySQL + BFS in C#,neighbourhood,2,s7,5668490,-1,0,12.2,38969
+100M,MySQL + BFS in C#,neighbourhood,2,s7,5668490,-1,1,7.0,38969
+100M,MySQL + BFS in C#,neighbourhood,2,s7,5668490,-1,2,7.0,38969
+100M,MySQL + BFS in C#,neighbourhood,2,s7,5668490,-1,3,7.3,38969
+100M,MySQL + BFS in C#,neighbourhood,3,s7,5668490,-1,0,341.5,991205
+100M,MySQL + BFS in C#,neighbourhood,3,s7,5668490,-1,1,344.5,991205
+100M,MySQL + BFS in C#,neighbourhood,3,s7,5668490,-1,2,346.9,991205
+100M,MySQL + BFS in C#,neighbourhood,3,s7,5668490,-1,3,343.4,991205
+100M,MySQL + BFS in C#,neighbourhood,4,s7,5668490,-1,0,9653.1,8671110
+100M,MySQL + BFS in C#,neighbourhood,4,s7,5668490,-1,1,9839.4,8671110
+100M,MySQL + BFS in C#,neighbourhood,4,s7,5668490,-1,2,9435.4,8671110
+100M,MySQL + BFS in C#,neighbourhood,4,s7,5668490,-1,3,9464.6,8671110
+100M,MySQL + BFS in C#,neighbourhood,1,s8,7946720,-1,0,1.6,18
+100M,MySQL + BFS in C#,neighbourhood,1,s8,7946720,-1,1,1.2,18
+100M,MySQL + BFS in C#,neighbourhood,1,s8,7946720,-1,2,0.8,18
+100M,MySQL + BFS in C#,neighbourhood,1,s8,7946720,-1,3,0.6,18
+100M,MySQL + BFS in C#,neighbourhood,2,s8,7946720,-1,0,2.2,357
+100M,MySQL + BFS in C#,neighbourhood,2,s8,7946720,-1,1,1.8,357
+100M,MySQL + BFS in C#,neighbourhood,2,s8,7946720,-1,2,1.8,357
+100M,MySQL + BFS in C#,neighbourhood,2,s8,7946720,-1,3,1.5,357
+100M,MySQL + BFS in C#,neighbourhood,3,s8,7946720,-1,0,7.3,14561
+100M,MySQL + BFS in C#,neighbourhood,3,s8,7946720,-1,1,5.1,14561
+100M,MySQL + BFS in C#,neighbourhood,3,s8,7946720,-1,2,5.0,14561
+100M,MySQL + BFS in C#,neighbourhood,3,s8,7946720,-1,3,4.7,14561
+100M,MySQL + BFS in C#,neighbourhood,4,s8,7946720,-1,0,231.5,924067
+100M,MySQL + BFS in C#,neighbourhood,4,s8,7946720,-1,1,233.2,924067
+100M,MySQL + BFS in C#,neighbourhood,4,s8,7946720,-1,2,232.3,924067
+100M,MySQL + BFS in C#,neighbourhood,4,s8,7946720,-1,3,231.1,924067
+100M,MySQL + BFS in C#,neighbourhood,1,s9,2547537,-1,0,0.5,10
+100M,MySQL + BFS in C#,neighbourhood,1,s9,2547537,-1,1,0.3,10
+100M,MySQL + BFS in C#,neighbourhood,1,s9,2547537,-1,2,0.3,10
+100M,MySQL + BFS in C#,neighbourhood,1,s9,2547537,-1,3,0.2,10
+100M,MySQL + BFS in C#,neighbourhood,2,s9,2547537,-1,0,0.6,227
+100M,MySQL + BFS in C#,neighbourhood,2,s9,2547537,-1,1,0.6,227
+100M,MySQL + BFS in C#,neighbourhood,2,s9,2547537,-1,2,0.6,227
+100M,MySQL + BFS in C#,neighbourhood,2,s9,2547537,-1,3,0.6,227
+100M,MySQL + BFS in C#,neighbourhood,3,s9,2547537,-1,0,35.6,221695
+100M,MySQL + BFS in C#,neighbourhood,3,s9,2547537,-1,1,34.9,221695
+100M,MySQL + BFS in C#,neighbourhood,3,s9,2547537,-1,2,35.5,221695
+100M,MySQL + BFS in C#,neighbourhood,3,s9,2547537,-1,3,34.9,221695
+100M,MySQL + BFS in C#,neighbourhood,4,s9,2547537,-1,0,1859.6,4173800
+100M,MySQL + BFS in C#,neighbourhood,4,s9,2547537,-1,1,1862.6,4173800
+100M,MySQL + BFS in C#,neighbourhood,4,s9,2547537,-1,2,1857.4,4173800
+100M,MySQL + BFS in C#,neighbourhood,4,s9,2547537,-1,3,1869.4,4173800
+100M,NebulaGraph nGQL,neighbourhood,1,s0,5626108,-1,0,7.6,28
+100M,NebulaGraph nGQL,neighbourhood,1,s0,5626108,-1,1,1.9,28
+100M,NebulaGraph nGQL,neighbourhood,1,s0,5626108,-1,2,2.0,28
+100M,NebulaGraph nGQL,neighbourhood,1,s0,5626108,-1,3,1.7,28
+100M,NebulaGraph nGQL,neighbourhood,2,s0,5626108,-1,0,6.6,4379
+100M,NebulaGraph nGQL,neighbourhood,2,s0,5626108,-1,1,4.5,4379
+100M,NebulaGraph nGQL,neighbourhood,2,s0,5626108,-1,2,4.1,4379
+100M,NebulaGraph nGQL,neighbourhood,2,s0,5626108,-1,3,3.6,4379
+100M,NebulaGraph nGQL,neighbourhood,3,s0,5626108,-1,0,48.9,127733
+100M,NebulaGraph nGQL,neighbourhood,3,s0,5626108,-1,1,36.4,127733
+100M,NebulaGraph nGQL,neighbourhood,3,s0,5626108,-1,2,33.7,127733
+100M,NebulaGraph nGQL,neighbourhood,3,s0,5626108,-1,3,34.0,127733
+100M,NebulaGraph nGQL,neighbourhood,4,s0,5626108,-1,0,1115.2,3710886
+100M,NebulaGraph nGQL,neighbourhood,4,s0,5626108,-1,1,1017.4,3710886
+100M,NebulaGraph nGQL,neighbourhood,4,s0,5626108,-1,2,1004.6,3710886
+100M,NebulaGraph nGQL,neighbourhood,4,s0,5626108,-1,3,981.5,3710886
+100M,NebulaGraph nGQL,neighbourhood,1,s1,8020274,-1,0,1.6,26
+100M,NebulaGraph nGQL,neighbourhood,1,s1,8020274,-1,1,1.4,26
+100M,NebulaGraph nGQL,neighbourhood,1,s1,8020274,-1,2,1.1,26
+100M,NebulaGraph nGQL,neighbourhood,1,s1,8020274,-1,3,1.0,26
+100M,NebulaGraph nGQL,neighbourhood,2,s1,8020274,-1,0,2.0,1719
+100M,NebulaGraph nGQL,neighbourhood,2,s1,8020274,-1,1,1.9,1719
+100M,NebulaGraph nGQL,neighbourhood,2,s1,8020274,-1,2,2.3,1719
+100M,NebulaGraph nGQL,neighbourhood,2,s1,8020274,-1,3,2.5,1719
+100M,NebulaGraph nGQL,neighbourhood,3,s1,8020274,-1,0,70.1,285452
+100M,NebulaGraph nGQL,neighbourhood,3,s1,8020274,-1,1,68.9,285452
+100M,NebulaGraph nGQL,neighbourhood,3,s1,8020274,-1,2,69.5,285452
+100M,NebulaGraph nGQL,neighbourhood,3,s1,8020274,-1,3,66.7,285452
+100M,NebulaGraph nGQL,neighbourhood,4,s1,8020274,-1,0,1843.8,5244151
+100M,NebulaGraph nGQL,neighbourhood,4,s1,8020274,-1,1,1666.5,5244151
+100M,NebulaGraph nGQL,neighbourhood,4,s1,8020274,-1,2,1704.8,5244151
+100M,NebulaGraph nGQL,neighbourhood,4,s1,8020274,-1,3,1784.2,5244151
+100M,NebulaGraph nGQL,neighbourhood,1,s2,1879716,-1,0,1.6,17
+100M,NebulaGraph nGQL,neighbourhood,1,s2,1879716,-1,1,1.1,17
+100M,NebulaGraph nGQL,neighbourhood,1,s2,1879716,-1,2,1.5,17
+100M,NebulaGraph nGQL,neighbourhood,1,s2,1879716,-1,3,1.0,17
+100M,NebulaGraph nGQL,neighbourhood,2,s2,1879716,-1,0,1.7,390
+100M,NebulaGraph nGQL,neighbourhood,2,s2,1879716,-1,1,2.7,390
+100M,NebulaGraph nGQL,neighbourhood,2,s2,1879716,-1,2,2.2,390
+100M,NebulaGraph nGQL,neighbourhood,2,s2,1879716,-1,3,2.9,390
+100M,NebulaGraph nGQL,neighbourhood,3,s2,1879716,-1,0,22.1,78526
+100M,NebulaGraph nGQL,neighbourhood,3,s2,1879716,-1,1,20.4,78526
+100M,NebulaGraph nGQL,neighbourhood,3,s2,1879716,-1,2,20.8,78526
+100M,NebulaGraph nGQL,neighbourhood,3,s2,1879716,-1,3,21.0,78526
+100M,NebulaGraph nGQL,neighbourhood,4,s2,1879716,-1,0,575.9,2162624
+100M,NebulaGraph nGQL,neighbourhood,4,s2,1879716,-1,1,556.1,2162624
+100M,NebulaGraph nGQL,neighbourhood,4,s2,1879716,-1,2,552.8,2162624
+100M,NebulaGraph nGQL,neighbourhood,4,s2,1879716,-1,3,554.0,2162624
+100M,NebulaGraph nGQL,neighbourhood,1,s3,1112817,-1,0,1.5,24
+100M,NebulaGraph nGQL,neighbourhood,1,s3,1112817,-1,1,1.1,24
+100M,NebulaGraph nGQL,neighbourhood,1,s3,1112817,-1,2,1.1,24
+100M,NebulaGraph nGQL,neighbourhood,1,s3,1112817,-1,3,1.1,24
+100M,NebulaGraph nGQL,neighbourhood,2,s3,1112817,-1,0,2.6,1636
+100M,NebulaGraph nGQL,neighbourhood,2,s3,1112817,-1,1,2.3,1636
+100M,NebulaGraph nGQL,neighbourhood,2,s3,1112817,-1,2,2.5,1636
+100M,NebulaGraph nGQL,neighbourhood,2,s3,1112817,-1,3,2.2,1636
+100M,NebulaGraph nGQL,neighbourhood,3,s3,1112817,-1,0,16.6,57809
+100M,NebulaGraph nGQL,neighbourhood,3,s3,1112817,-1,1,16.3,57809
+100M,NebulaGraph nGQL,neighbourhood,3,s3,1112817,-1,2,15.8,57809
+100M,NebulaGraph nGQL,neighbourhood,3,s3,1112817,-1,3,14.5,57809
+100M,NebulaGraph nGQL,neighbourhood,4,s3,1112817,-1,0,551.8,2282719
+100M,NebulaGraph nGQL,neighbourhood,4,s3,1112817,-1,1,545.8,2282719
+100M,NebulaGraph nGQL,neighbourhood,4,s3,1112817,-1,2,551.4,2282719
+100M,NebulaGraph nGQL,neighbourhood,4,s3,1112817,-1,3,554.9,2282719
+100M,NebulaGraph nGQL,neighbourhood,1,s4,9091650,-1,0,1.4,8
+100M,NebulaGraph nGQL,neighbourhood,1,s4,9091650,-1,1,1.1,8
+100M,NebulaGraph nGQL,neighbourhood,1,s4,9091650,-1,2,1.1,8
+100M,NebulaGraph nGQL,neighbourhood,1,s4,9091650,-1,3,0.9,8
+100M,NebulaGraph nGQL,neighbourhood,2,s4,9091650,-1,0,2.0,267
+100M,NebulaGraph nGQL,neighbourhood,2,s4,9091650,-1,1,1.7,267
+100M,NebulaGraph nGQL,neighbourhood,2,s4,9091650,-1,2,1.5,267
+100M,NebulaGraph nGQL,neighbourhood,2,s4,9091650,-1,3,1.6,267
+100M,NebulaGraph nGQL,neighbourhood,3,s4,9091650,-1,0,4.1,8541
+100M,NebulaGraph nGQL,neighbourhood,3,s4,9091650,-1,1,5.6,8541
+100M,NebulaGraph nGQL,neighbourhood,3,s4,9091650,-1,2,4.4,8541
+100M,NebulaGraph nGQL,neighbourhood,3,s4,9091650,-1,3,4.6,8541
+100M,NebulaGraph nGQL,neighbourhood,4,s4,9091650,-1,0,166.2,745566
+100M,NebulaGraph nGQL,neighbourhood,4,s4,9091650,-1,1,161.5,745566
+100M,NebulaGraph nGQL,neighbourhood,4,s4,9091650,-1,2,163.5,745566
+100M,NebulaGraph nGQL,neighbourhood,4,s4,9091650,-1,3,161.6,745566
+100M,NebulaGraph nGQL,neighbourhood,1,s5,9510507,-1,0,1.7,31
+100M,NebulaGraph nGQL,neighbourhood,1,s5,9510507,-1,1,1.2,31
+100M,NebulaGraph nGQL,neighbourhood,1,s5,9510507,-1,2,1.2,31
+100M,NebulaGraph nGQL,neighbourhood,1,s5,9510507,-1,3,1.0,31
+100M,NebulaGraph nGQL,neighbourhood,2,s5,9510507,-1,0,3.3,6499
+100M,NebulaGraph nGQL,neighbourhood,2,s5,9510507,-1,1,3.6,6499
+100M,NebulaGraph nGQL,neighbourhood,2,s5,9510507,-1,2,3.2,6499
+100M,NebulaGraph nGQL,neighbourhood,2,s5,9510507,-1,3,3.0,6499
+100M,NebulaGraph nGQL,neighbourhood,3,s5,9510507,-1,0,100.6,399763
+100M,NebulaGraph nGQL,neighbourhood,3,s5,9510507,-1,1,97.9,399763
+100M,NebulaGraph nGQL,neighbourhood,3,s5,9510507,-1,2,96.5,399763
+100M,NebulaGraph nGQL,neighbourhood,3,s5,9510507,-1,3,94.0,399763
+100M,NebulaGraph nGQL,neighbourhood,4,s5,9510507,-1,0,2225.4,6418910
+100M,NebulaGraph nGQL,neighbourhood,4,s5,9510507,-1,1,2201.8,6418910
+100M,NebulaGraph nGQL,neighbourhood,4,s5,9510507,-1,2,2199.5,6418910
+100M,NebulaGraph nGQL,neighbourhood,4,s5,9510507,-1,3,2195.7,6418910
+100M,NebulaGraph nGQL,neighbourhood,1,s6,3746834,-1,0,1.5,18
+100M,NebulaGraph nGQL,neighbourhood,1,s6,3746834,-1,1,1.2,18
+100M,NebulaGraph nGQL,neighbourhood,1,s6,3746834,-1,2,1.7,18
+100M,NebulaGraph nGQL,neighbourhood,1,s6,3746834,-1,3,1.1,18
+100M,NebulaGraph nGQL,neighbourhood,2,s6,3746834,-1,0,2.0,413
+100M,NebulaGraph nGQL,neighbourhood,2,s6,3746834,-1,1,2.7,413
+100M,NebulaGraph nGQL,neighbourhood,2,s6,3746834,-1,2,1.8,413
+100M,NebulaGraph nGQL,neighbourhood,2,s6,3746834,-1,3,2.1,413
+100M,NebulaGraph nGQL,neighbourhood,3,s6,3746834,-1,0,55.9,227125
+100M,NebulaGraph nGQL,neighbourhood,3,s6,3746834,-1,1,54.5,227125
+100M,NebulaGraph nGQL,neighbourhood,3,s6,3746834,-1,2,55.5,227125
+100M,NebulaGraph nGQL,neighbourhood,3,s6,3746834,-1,3,54.0,227125
+100M,NebulaGraph nGQL,neighbourhood,4,s6,3746834,-1,0,1297.4,4333466
+100M,NebulaGraph nGQL,neighbourhood,4,s6,3746834,-1,1,1466.5,4333466
+100M,NebulaGraph nGQL,neighbourhood,4,s6,3746834,-1,2,1329.7,4333466
+100M,NebulaGraph nGQL,neighbourhood,4,s6,3746834,-1,3,1318.9,4333466
+100M,NebulaGraph nGQL,neighbourhood,1,s7,5668490,-1,0,2.1,21
+100M,NebulaGraph nGQL,neighbourhood,1,s7,5668490,-1,1,1.6,21
+100M,NebulaGraph nGQL,neighbourhood,1,s7,5668490,-1,2,1.2,21
+100M,NebulaGraph nGQL,neighbourhood,1,s7,5668490,-1,3,1.1,21
+100M,NebulaGraph nGQL,neighbourhood,2,s7,5668490,-1,0,13.5,38969
+100M,NebulaGraph nGQL,neighbourhood,2,s7,5668490,-1,1,12.7,38969
+100M,NebulaGraph nGQL,neighbourhood,2,s7,5668490,-1,2,12.4,38969
+100M,NebulaGraph nGQL,neighbourhood,2,s7,5668490,-1,3,10.8,38969
+100M,NebulaGraph nGQL,neighbourhood,3,s7,5668490,-1,0,254.9,991205
+100M,NebulaGraph nGQL,neighbourhood,3,s7,5668490,-1,1,249.1,991205
+100M,NebulaGraph nGQL,neighbourhood,3,s7,5668490,-1,2,256.6,991205
+100M,NebulaGraph nGQL,neighbourhood,3,s7,5668490,-1,3,246.1,991205
+100M,NebulaGraph nGQL,neighbourhood,4,s7,5668490,-1,0,4208.1,8671110
+100M,NebulaGraph nGQL,neighbourhood,4,s7,5668490,-1,1,4390.9,8671110
+100M,NebulaGraph nGQL,neighbourhood,4,s7,5668490,-1,2,4416.7,8671110
+100M,NebulaGraph nGQL,neighbourhood,4,s7,5668490,-1,3,4458.0,8671110
+100M,NebulaGraph nGQL,neighbourhood,1,s8,7946720,-1,0,2.1,18
+100M,NebulaGraph nGQL,neighbourhood,1,s8,7946720,-1,1,2.2,18
+100M,NebulaGraph nGQL,neighbourhood,1,s8,7946720,-1,2,1.5,18
+100M,NebulaGraph nGQL,neighbourhood,1,s8,7946720,-1,3,1.1,18
+100M,NebulaGraph nGQL,neighbourhood,2,s8,7946720,-1,0,3.7,357
+100M,NebulaGraph nGQL,neighbourhood,2,s8,7946720,-1,1,5.0,357
+100M,NebulaGraph nGQL,neighbourhood,2,s8,7946720,-1,2,1.9,357
+100M,NebulaGraph nGQL,neighbourhood,2,s8,7946720,-1,3,1.9,357
+100M,NebulaGraph nGQL,neighbourhood,3,s8,7946720,-1,0,9.8,14561
+100M,NebulaGraph nGQL,neighbourhood,3,s8,7946720,-1,1,11.0,14561
+100M,NebulaGraph nGQL,neighbourhood,3,s8,7946720,-1,2,10.8,14561
+100M,NebulaGraph nGQL,neighbourhood,3,s8,7946720,-1,3,8.6,14561
+100M,NebulaGraph nGQL,neighbourhood,4,s8,7946720,-1,0,208.1,924067
+100M,NebulaGraph nGQL,neighbourhood,4,s8,7946720,-1,1,204.1,924067
+100M,NebulaGraph nGQL,neighbourhood,4,s8,7946720,-1,2,207.7,924067
+100M,NebulaGraph nGQL,neighbourhood,4,s8,7946720,-1,3,204.4,924067
+100M,NebulaGraph nGQL,neighbourhood,1,s9,2547537,-1,0,1.2,10
+100M,NebulaGraph nGQL,neighbourhood,1,s9,2547537,-1,1,1.1,10
+100M,NebulaGraph nGQL,neighbourhood,1,s9,2547537,-1,2,1.2,10
+100M,NebulaGraph nGQL,neighbourhood,1,s9,2547537,-1,3,1.1,10
+100M,NebulaGraph nGQL,neighbourhood,2,s9,2547537,-1,0,1.8,227
+100M,NebulaGraph nGQL,neighbourhood,2,s9,2547537,-1,1,1.5,227
+100M,NebulaGraph nGQL,neighbourhood,2,s9,2547537,-1,2,1.6,227
+100M,NebulaGraph nGQL,neighbourhood,2,s9,2547537,-1,3,2.3,227
+100M,NebulaGraph nGQL,neighbourhood,3,s9,2547537,-1,0,58.5,221695
+100M,NebulaGraph nGQL,neighbourhood,3,s9,2547537,-1,1,55.7,221695
+100M,NebulaGraph nGQL,neighbourhood,3,s9,2547537,-1,2,56.9,221695
+100M,NebulaGraph nGQL,neighbourhood,3,s9,2547537,-1,3,54.9,221695
+100M,NebulaGraph nGQL,neighbourhood,4,s9,2547537,-1,0,1260.9,4173800
+100M,NebulaGraph nGQL,neighbourhood,4,s9,2547537,-1,1,1248.6,4173800
+100M,NebulaGraph nGQL,neighbourhood,4,s9,2547537,-1,2,1262.3,4173800
+100M,NebulaGraph nGQL,neighbourhood,4,s9,2547537,-1,3,1263.3,4173800
+100M,MySQL recursive CTE,shortest path,6,walk0,408532,6080635,0,768683.5,2
+100M,MySQL recursive CTE,shortest path,6,random1,7405857,7159454,0,583285.5,5
+100M,MySQL recursive CTE,shortest path,6,walk2,3258054,4388221,0,546307.0,3
+100M,MySQL recursive CTE,shortest path,6,random3,9521347,3494371,0,509671.0,6
+100M,MySQL recursive CTE,shortest path,6,walk4,2331511,2820934,0,timeout,
+100M,MySQL recursive CTE,shortest path,6,random5,6314744,4018852,0,840957.9,5
+100M,MySQL recursive CTE,shortest path,6,walk6,3118122,5645705,0,665705.0,2
+100M,MySQL recursive CTE,shortest path,6,random7,7476156,9888482,0,timeout,
+100M,MySQL recursive CTE,shortest path,6,walk8,7287874,3983822,0,586125.3,3
+100M,MySQL recursive CTE,shortest path,6,random9,7213405,2953203,0,214151.4,5
+100M,MySQL + BFS in C#,shortest path,6,walk0,408532,6080635,0,4.3,2
+100M,MySQL + BFS in C#,shortest path,6,walk0,408532,6080635,1,0.6,2
+100M,MySQL + BFS in C#,shortest path,6,walk0,408532,6080635,2,0.5,2
+100M,MySQL + BFS in C#,shortest path,6,walk0,408532,6080635,3,1.5,2
+100M,MySQL + BFS in C#,shortest path,6,random1,7405857,7159454,0,12.5,5
+100M,MySQL + BFS in C#,shortest path,6,random1,7405857,7159454,1,7.9,5
+100M,MySQL + BFS in C#,shortest path,6,random1,7405857,7159454,2,8.0,5
+100M,MySQL + BFS in C#,shortest path,6,random1,7405857,7159454,3,7.7,5
+100M,MySQL + BFS in C#,shortest path,6,walk2,3258054,4388221,0,0.9,3
+100M,MySQL + BFS in C#,shortest path,6,walk2,3258054,4388221,1,0.8,3
+100M,MySQL + BFS in C#,shortest path,6,walk2,3258054,4388221,2,0.8,3
+100M,MySQL + BFS in C#,shortest path,6,walk2,3258054,4388221,3,0.8,3
+100M,MySQL + BFS in C#,shortest path,6,random3,9521347,3494371,0,6.7,6
+100M,MySQL + BFS in C#,shortest path,6,random3,9521347,3494371,1,10.4,6
+100M,MySQL + BFS in C#,shortest path,6,random3,9521347,3494371,2,6.4,6
+100M,MySQL + BFS in C#,shortest path,6,random3,9521347,3494371,3,5.9,6
+100M,MySQL + BFS in C#,shortest path,6,walk4,2331511,2820934,0,2.7,4
+100M,MySQL + BFS in C#,shortest path,6,walk4,2331511,2820934,1,2.7,4
+100M,MySQL + BFS in C#,shortest path,6,walk4,2331511,2820934,2,2.6,4
+100M,MySQL + BFS in C#,shortest path,6,walk4,2331511,2820934,3,2.6,4
+100M,MySQL + BFS in C#,shortest path,6,random5,6314744,4018852,0,36.9,5
+100M,MySQL + BFS in C#,shortest path,6,random5,6314744,4018852,1,38.1,5
+100M,MySQL + BFS in C#,shortest path,6,random5,6314744,4018852,2,38.0,5
+100M,MySQL + BFS in C#,shortest path,6,random5,6314744,4018852,3,38.2,5
+100M,MySQL + BFS in C#,shortest path,6,walk6,3118122,5645705,0,0.5,2
+100M,MySQL + BFS in C#,shortest path,6,walk6,3118122,5645705,1,0.4,2
+100M,MySQL + BFS in C#,shortest path,6,walk6,3118122,5645705,2,0.4,2
+100M,MySQL + BFS in C#,shortest path,6,walk6,3118122,5645705,3,0.4,2
+100M,MySQL + BFS in C#,shortest path,6,random7,7476156,9888482,0,0.4,2
+100M,MySQL + BFS in C#,shortest path,6,random7,7476156,9888482,1,0.4,2
+100M,MySQL + BFS in C#,shortest path,6,random7,7476156,9888482,2,0.4,2
+100M,MySQL + BFS in C#,shortest path,6,random7,7476156,9888482,3,0.4,2
+100M,MySQL + BFS in C#,shortest path,6,walk8,7287874,3983822,0,0.9,3
+100M,MySQL + BFS in C#,shortest path,6,walk8,7287874,3983822,1,0.8,3
+100M,MySQL + BFS in C#,shortest path,6,walk8,7287874,3983822,2,0.8,3
+100M,MySQL + BFS in C#,shortest path,6,walk8,7287874,3983822,3,0.8,3
+100M,MySQL + BFS in C#,shortest path,6,random9,7213405,2953203,0,2.6,5
+100M,MySQL + BFS in C#,shortest path,6,random9,7213405,2953203,1,2.2,5
+100M,MySQL + BFS in C#,shortest path,6,random9,7213405,2953203,2,2.2,5
+100M,MySQL + BFS in C#,shortest path,6,random9,7213405,2953203,3,2.3,5
+100M,NebulaGraph nGQL,shortest path,6,walk0,408532,6080635,0,3.2,2
+100M,NebulaGraph nGQL,shortest path,6,walk0,408532,6080635,1,1.5,2
+100M,NebulaGraph nGQL,shortest path,6,walk0,408532,6080635,2,1.0,2
+100M,NebulaGraph nGQL,shortest path,6,walk0,408532,6080635,3,1.4,2
+100M,NebulaGraph nGQL,shortest path,6,random1,7405857,7159454,0,35.2,5
+100M,NebulaGraph nGQL,shortest path,6,random1,7405857,7159454,1,37.5,5
+100M,NebulaGraph nGQL,shortest path,6,random1,7405857,7159454,2,35.3,5
+100M,NebulaGraph nGQL,shortest path,6,random1,7405857,7159454,3,34.9,5
+100M,NebulaGraph nGQL,shortest path,6,walk2,3258054,4388221,0,3.3,3
+100M,NebulaGraph nGQL,shortest path,6,walk2,3258054,4388221,1,2.8,3
+100M,NebulaGraph nGQL,shortest path,6,walk2,3258054,4388221,2,3.3,3
+100M,NebulaGraph nGQL,shortest path,6,walk2,3258054,4388221,3,3.0,3
+100M,NebulaGraph nGQL,shortest path,6,random3,9521347,3494371,0,9.4,6
+100M,NebulaGraph nGQL,shortest path,6,random3,9521347,3494371,1,9.4,6
+100M,NebulaGraph nGQL,shortest path,6,random3,9521347,3494371,2,8.9,6
+100M,NebulaGraph nGQL,shortest path,6,random3,9521347,3494371,3,8.9,6
+100M,NebulaGraph nGQL,shortest path,6,walk4,2331511,2820934,0,8.4,4
+100M,NebulaGraph nGQL,shortest path,6,walk4,2331511,2820934,1,8.3,4
+100M,NebulaGraph nGQL,shortest path,6,walk4,2331511,2820934,2,8.3,4
+100M,NebulaGraph nGQL,shortest path,6,walk4,2331511,2820934,3,8.5,4
+100M,NebulaGraph nGQL,shortest path,6,random5,6314744,4018852,0,229.5,5
+100M,NebulaGraph nGQL,shortest path,6,random5,6314744,4018852,1,223.8,5
+100M,NebulaGraph nGQL,shortest path,6,random5,6314744,4018852,2,208.4,5
+100M,NebulaGraph nGQL,shortest path,6,random5,6314744,4018852,3,200.5,5
+100M,NebulaGraph nGQL,shortest path,6,walk6,3118122,5645705,0,1.7,2
+100M,NebulaGraph nGQL,shortest path,6,walk6,3118122,5645705,1,1.5,2
+100M,NebulaGraph nGQL,shortest path,6,walk6,3118122,5645705,2,1.4,2
+100M,NebulaGraph nGQL,shortest path,6,walk6,3118122,5645705,3,1.4,2
+100M,NebulaGraph nGQL,shortest path,6,random7,7476156,9888482,0,1.3,2
+100M,NebulaGraph nGQL,shortest path,6,random7,7476156,9888482,1,1.1,2
+100M,NebulaGraph nGQL,shortest path,6,random7,7476156,9888482,2,1.4,2
+100M,NebulaGraph nGQL,shortest path,6,random7,7476156,9888482,3,1.3,2
+100M,NebulaGraph nGQL,shortest path,6,walk8,7287874,3983822,0,159.6,3
+100M,NebulaGraph nGQL,shortest path,6,walk8,7287874,3983822,1,154.9,3
+100M,NebulaGraph nGQL,shortest path,6,walk8,7287874,3983822,2,152.2,3
+100M,NebulaGraph nGQL,shortest path,6,walk8,7287874,3983822,3,152.2,3
+100M,NebulaGraph nGQL,shortest path,6,random9,7213405,2953203,0,208.5,5
+100M,NebulaGraph nGQL,shortest path,6,random9,7213405,2953203,1,207.4,5
+100M,NebulaGraph nGQL,shortest path,6,random9,7213405,2953203,2,217.4,5
+100M,NebulaGraph nGQL,shortest path,6,random9,7213405,2953203,3,203.5,5
